@@ -63,3 +63,7 @@ jobs:
         publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }} # Remove publish-profile to use Azure RBAC
         scm-do-build-during-deployment: true
         enable-oryx-build: true
+
+    - name: 'Send HTTP Request to Function App'
+      run: |
+        curl -X POST -H "Content-Type: application/json" -d '{"action":"load"}' https://webscrapingenergyinfo.azurewebsites.net/api/webscrapingHTTP
