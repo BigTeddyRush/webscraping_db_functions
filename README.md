@@ -26,6 +26,7 @@ HOMEBREW_ACCEPT_EULA=Y brew install msodbcsql18 mssql-tools18
 - Azure Functions
   - https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-python
   - As I used a time trigger function, that runs every second you can find some tutorials in the internet
+  - Also I used a http trigger function, that runs, when the "action" is set to "load"
 - Energy Info API \
   https://api.energy-charts.info/
 
