@@ -13,21 +13,21 @@ app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 def webscrapingHTTP(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
-    name = req.params.get('name')
-    if not name:
+    action = req.params.get('action')
+    if not action:
         try:
             req_body = req.get_json()
         except ValueError:
             pass
         else:
-            name = req_body.get('name')
+            action = req_body.get('action')
 
-    if name == 'load':
+    if action == 'load':
         webscraping()
         return func.HttpResponse(f"Success")
     else:
         return func.HttpResponse(
-             "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.",
+             "This HTTP triggered function executed successfully. Pass as action 'load' to delete the current db and fill it new",
              status_code=200
         )
     
