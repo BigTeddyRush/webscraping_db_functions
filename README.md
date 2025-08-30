@@ -53,6 +53,6 @@ func host start
 `````
 
 #### 7. Trigger Function
-`````
+````
 curl "http://localhost:7071/api/webscrapingHTTP?action=load"
 ````
